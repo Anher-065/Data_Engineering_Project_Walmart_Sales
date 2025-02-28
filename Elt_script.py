@@ -13,7 +13,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "imposing-byway-451600-p2-2c4bad5
 # Define Google Cloud variables
 GCS_BUCKET_NAME = "walmart-hackathon"
 CSV_FILE_NAME = "Walmart_Sales_Data.csv"  # Ensure this matches exactly
-BQ_PROJECT = "imposing-byway-451600-p2"
+BQ_PROJECT = "project_id"
 BQ_DATASET = "walmart_sales_data"
 BQ_TABLE = "walmart_sales"
 
