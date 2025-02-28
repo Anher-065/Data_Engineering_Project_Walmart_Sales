@@ -40,7 +40,8 @@ The dataset consists of Walmart sales data stored in CSV format, containing colu
 ### **Google Cloud Storage**  
 The raw CSV file is uploaded to a **Google Cloud Storage** bucket for processing.  
 
-📌 **[INSERT A SCREENSHOT OF GOOGLE CLOUD STORAGE BUCKET HERE]**  
+![image](https://github.com/user-attachments/assets/0fb4ee23-d1b1-4c53-8222-54056507e8dc)
+ 
 
 ---
 
@@ -55,28 +56,41 @@ A **Dockerized Python script** is deployed to **Google Cloud Run**, automating t
    - Converting date/time formats.  
    - Calculating **total revenue, tax, and sales metrics**.  
 
-📌 **[INSERT A SCREENSHOT OF CLOUD RUN DEPLOYMENT HERE]**  
+![image](https://github.com/user-attachments/assets/d31bbf2c-2869-48b5-8ca8-686607d4d006)
+ 
 
 ---
 
 ## **Data Analysis and Insights**  
 
 ### **BigQuery SQL Transformations**  
-- **Total Revenue per Store**: Aggregates sales by branch.  
-- **Top-Selling Products**: Identifies best-performing product lines.  
-- **Customer Demographics**: Analyzes sales by gender and customer type.  
-- **Peak Sales Hours**: Determines high-traffic shopping times.  
+- The primary transformation performed is on date formatting to ensure consistency across different formats. The transformation logic:
 
-📌 **[INSERT A SCREENSHOT OF BIGQUERY TABLES AND SQL QUERY RESULTS HERE]**  
+Converts Date from mixed formats (%m/%d/%Y and %d/%m/%Y) into a unified format using COALESCE(SAFE.PARSE_DATE(...)).
+Extracts Year, Month, and Day from the formatted date for time-based analysis.
+Potential Future Transformations
+Although the current transformation mainly handles date standardization, additional queries can be created to extract more insights:
+
+Total Sales per Branch: Aggregates revenue per store location.
+Best-Selling Product Lines: Identifies top-performing product categories.
+Customer Segmentation: Analyzes spending patterns based on gender and customer type.
+Peak Sales Periods: Determines high-traffic days/times for strategic decision-making.  
+
+![image](https://github.com/user-attachments/assets/6ace1958-16c1-4880-b688-40af57c3bed1)
+  
 
 ### **Power BI Dashboard**  
-The processed data is visualized in **Power BI**, featuring:  
-✅ **Total Revenue & Sales Trends**  
-✅ **Top Products & Customer Segments**  
-✅ **Geographical Sales Performance**  
-✅ **Payment Methods & Customer Ratings**  
+This project visualizes Walmart sales data using Power BI, providing insights into sales trends, customer behavior, and payment preferences. Key features include:
 
-📌 **[INSERT A SCREENSHOT OF THE FINAL POWER BI DASHBOARD HERE]**  
+📈 Total Revenue & Sales Trends: A line chart tracks sales over time.
+🏆 Top 3 Selling Product Lines: The most popular categories by gender.
+💳 Payment Methods Breakdown: Pie chart shows the proportion of cash, e-wallet, and credit card transactions.
+🏙️ Sales by City: Pie chart displays total revenue distribution across Mandalay, Naypyitaw, and Yangon.
+🛍️ Branch & Customer Type: Bar chart shows total sales categorized by branch and customer type (Member vs. Normal).
+💰 Gross Income Analysis: Displays total earnings from sales.
+
+![image](https://github.com/user-attachments/assets/4ec03bcf-8d2f-40c8-ace2-499543a301d0)
+
 
 ---
 
@@ -86,7 +100,8 @@ The processed data is visualized in **Power BI**, featuring:
 - **Dockerfile**: Defines the Python environment for processing Walmart sales data.  
 - **Cloud Run Deployment**: Automates ELT execution.  
 
-📌 **[INSERT A SCREENSHOT OF DOCKERFILE CONTENT OR CLOUD RUN EXECUTION HERE]**  
+![image](https://github.com/user-attachments/assets/19374117-b9e0-458b-978e-37783ab814cf)
+
 
 ---
 
